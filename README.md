@@ -7,11 +7,19 @@ This is an Applied Series project. I drove the architecture and every design dec
 ## Project Metrics
 
 • 106 CSF 2.0 Subcategories Assessed
+
 • 22 CSF Categories Evaluated
+
 • 6 CSF Functions Analyzed
+
 • Markdown Report Generation
+
 • Interactive HTML Heatmap Visualization
+
 • Assessment Validation Against NIST Reference Data
+
+<img width="1616" height="726" alt="image" src="https://github.com/user-attachments/assets/df19cc4b-8a19-4fae-a0e4-d4cc7972cf1b" />
+
 
 ## Why I built this
 
