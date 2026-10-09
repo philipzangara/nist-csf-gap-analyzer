@@ -1,0 +1,64 @@
+# Sample self-assessment for a fictional small business:
+# "Coastal Ridge Dental Group" — 4-location dental practice, ~60 employees,
+# outsourced IT (MSP), no dedicated security staff. Realistic profile for a
+# small business just starting to formalize its security posture.
+#
+# NOTE: This covers only a HANDFUL of subcategories (the ones I could verify
+# against real NIST CSF 2.0 source material) — not the full ~106-112.
+# Pull the complete list from the CPRT export (see earlier guidance) before
+# using this for real gap analysis. Treat this file as a format example +
+# a few real, accurate data points to test your loader/engine against.
+
+GV.OC-01:
+  # Organizational mission is understood in order to prioritize cybersecurity risk management
+  status: partial
+  evidence: "Practice owner understands mission/priorities informally; nothing documented that ties business priorities to security risk."
+  last_reviewed: "2026-08-01"
+
+GV.OC-02:
+  # Internal and external stakeholders, and their expectations regarding cybersecurity risk management, are determined
+  status: not_implemented
+  evidence: "No formal stakeholder analysis has been done. Patients, insurers, and the MSP are stakeholders but expectations aren't documented."
+  last_reviewed: "2026-08-01"
+
+GV.OC-03:
+  # Legal, regulatory, and contractual requirements regarding cybersecurity, including privacy, are understood and managed
+  status: partial
+  evidence: "HIPAA compliance is handled via MSP-provided checklist annually, but no internal owner tracks changes to requirements."
+  last_reviewed: "2026-08-01"
+
+GV.OC-04:
+  # Critical objectives, capabilities, and services that stakeholders expect are determined and communicated
+  status: not_implemented
+  evidence: "Not formally defined."
+  last_reviewed: "2026-08-01"
+
+GV.OC-05:
+  # Critical outcomes, capabilities, and services that the organization relies on are determined and communicated
+  status: not_implemented
+  evidence: "No documented list of critical systems (e.g., practice management software, imaging systems)."
+  last_reviewed: "2026-08-01"
+
+GV.RM-01:
+  # Cybersecurity risk management objectives are established and agreed to by organizational stakeholders
+  status: not_implemented
+  evidence: "No formal risk management objectives exist beyond 'don't get breached.'"
+  last_reviewed: "2026-08-01"
+
+GV.RM-04:
+  # Strategic direction that describes appropriate risk response options is established and communicated
+  status: not_implemented
+  evidence: "No documented risk response strategy (accept/mitigate/transfer/avoid) for any identified risk."
+  last_reviewed: "2026-08-01"
+
+PR.AA-01:
+  # Identities and credentials for authorized users, services, and hardware are managed
+  status: partial
+  evidence: "MSP manages Active Directory accounts and offboarding for terminated staff, but no periodic access review/recertification process."
+  last_reviewed: "2026-08-01"
+
+DE.CM-01:
+  # Networks and network services are monitored to find potentially adverse events
+  status: not_implemented
+  evidence: "Basic firewall logging exists but nothing is actively monitored or alerted on. No SIEM or log aggregation in place."
+  last_reviewed: "2026-08-01"

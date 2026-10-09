@@ -1,0 +1,115 @@
+# Test fixture assessment — designed to exercise gap_engine.py, not to
+# represent a specific real business (see the earlier "Coastal Ridge
+# Dental" sample for a business-narrative version).
+#
+# Deliberately mixed on purpose:
+# - GV.OC and PR.AT: fully implemented (100% coverage) — tests that a
+#   Category can hit 100% and that Function coverage reflects it.
+# - ID.RA and DE.CM: mixed implemented/partial/not_implemented — tests
+#   the partial-count-separate-from-percentage logic.
+# - RS.MI and every other category NOT listed here at all: tests the
+#   locked-in default that a subcategory (or entire category) absent
+#   from the assessment file is treated as not_implemented.
+#
+# All subcategory IDs below are real (from data/csf_2_0_reference.yaml).
+
+# --- GV.OC: 100% implemented (5/5) ---
+GV.OC-01:
+  status: implemented
+  evidence: "Mission and priorities documented in the annual risk review."
+  last_reviewed: "2026-09-01"
+GV.OC-02:
+  status: implemented
+  evidence: "Stakeholder register maintained covering patients, insurers, MSP, regulators."
+  last_reviewed: "2026-09-01"
+GV.OC-03:
+  status: implemented
+  evidence: "Legal/regulatory requirements tracked in a compliance calendar, reviewed quarterly."
+  last_reviewed: "2026-09-01"
+GV.OC-04:
+  status: implemented
+  evidence: "Critical service commitments documented and communicated to leadership."
+  last_reviewed: "2026-09-01"
+GV.OC-05:
+  status: implemented
+  evidence: "Critical systems list maintained and reviewed with IT provider."
+  last_reviewed: "2026-09-01"
+
+# --- PR.AT: 100% implemented (2/2) ---
+PR.AT-01:
+  status: implemented
+  evidence: "All staff complete annual security awareness training."
+  last_reviewed: "2026-09-01"
+PR.AT-02:
+  status: implemented
+  evidence: "Privileged users (IT admins) receive additional role-based training."
+  last_reviewed: "2026-09-01"
+
+# --- ID.RA: mixed (4 implemented, 3 partial, 3 not_implemented out of 10) ---
+ID.RA-01:
+  status: implemented
+  evidence: "Vulnerability scans run monthly via MSP-managed tooling."
+  last_reviewed: "2026-08-15"
+ID.RA-02:
+  status: not_implemented
+  evidence: "No threat intelligence feeds consumed."
+  last_reviewed: "2026-08-15"
+ID.RA-03:
+  status: partial
+  evidence: "Internal threats considered informally, not documented in a risk register."
+  last_reviewed: "2026-08-15"
+ID.RA-04:
+  status: implemented
+  evidence: "Potential impacts documented per critical system in the risk register."
+  last_reviewed: "2026-08-15"
+ID.RA-05:
+  status: partial
+  evidence: "Risk prioritization done ad hoc by owner, not against a documented methodology."
+  last_reviewed: "2026-08-15"
+ID.RA-06:
+  status: not_implemented
+  evidence: "No formal risk response tracking."
+  last_reviewed: "2026-08-15"
+ID.RA-07:
+  status: not_implemented
+  evidence: "Changes and exceptions to risk are not tracked."
+  last_reviewed: "2026-08-15"
+ID.RA-08:
+  status: implemented
+  evidence: "Vulnerability disclosure handled directly by MSP support line."
+  last_reviewed: "2026-08-15"
+ID.RA-09:
+  status: partial
+  evidence: "Some critical hardware/software criticality noted, not comprehensive."
+  last_reviewed: "2026-08-15"
+ID.RA-10:
+  status: implemented
+  evidence: "Supplier risk reviewed at contract signing for the practice management vendor."
+  last_reviewed: "2026-08-15"
+
+# --- DE.CM: mixed (2 implemented, 1 partial, 2 not_implemented out of 5) ---
+DE.CM-01:
+  status: not_implemented
+  evidence: "Firewall logs exist but nothing is actively monitored or alerted on."
+  last_reviewed: "2026-08-20"
+DE.CM-02:
+  status: implemented
+  evidence: "Physical access to server closet monitored via badge log, reviewed monthly."
+  last_reviewed: "2026-08-20"
+DE.CM-03:
+  status: partial
+  evidence: "Some user activity logging exists in the EHR system, not centrally reviewed."
+  last_reviewed: "2026-08-20"
+DE.CM-06:
+  status: not_implemented
+  evidence: "No monitoring of MSP or third-party service provider activity."
+  last_reviewed: "2026-08-20"
+DE.CM-09:
+  status: implemented
+  evidence: "Endpoint AV/EDR agent deployed and centrally managed by MSP."
+  last_reviewed: "2026-08-20"
+
+# NOTE: RS.MI and all other categories not listed above are intentionally
+# absent from this file — they should show up as 0% implemented / fully
+# "not_implemented" in gap_engine output, exercising the missing-subcategory
+# default rather than an explicit status.
